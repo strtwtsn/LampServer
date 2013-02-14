@@ -10,6 +10,8 @@ make
 make install
 rm /usr/local/src/ruby-1.9.3-p194.tar.gz
 gem install chef ruby-shadow --no-ri --no-rdoc
+git clone https://github.com/strtwtsn/LampServer.git /var/chef
+sudo /usr/local/bin/chef-solo -c /var/chef/config/chef-solo.rb -j /var/chef/roles/lampserver.json
 read -p "Enter new site name:" site
 wget https://github.com/strtwtsn/LampServer/blob/master/files/template /etc/apache2/sites-available/$site
 sed -i "s/site/$site/g" /etc/apache2/sites-available/$site
