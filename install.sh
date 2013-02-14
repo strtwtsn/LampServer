@@ -15,7 +15,7 @@ wget https://github.com/strtwtsn/LampServer/blob/master/files/template /etc/apac
 sed -i "s/site/$site/g" /etc/apache2/sites-available/$site
 mkdir -p /var/www/$site
 a2ensite $site
-https://github.com/strtwtsn/LampServer/blob/master/files/default /etc/apache2/sites-available/default
+wget https://github.com/strtwtsn/LampServer/blob/master/files/default /etc/apache2/sites-available/default
 a2enmod rewrite
 /etc/init.d/apache2 restart
 read -p "Enter new mysql root password:" password
