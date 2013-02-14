@@ -11,11 +11,11 @@ make install
 rm /usr/local/src/ruby-1.9.3-p194.tar.gz
 gem install chef ruby-shadow --no-ri --no-rdoc
 read -p "Enter new site name:" site
-cp /home/stuart/template /etc/apache2/sites-available/$site
+wget https://github.com/strtwtsn/LampServer/blob/master/files/template /etc/apache2/sites-available/$site
 sed -i "s/site/$site/g" /etc/apache2/sites-available/$site
 mkdir -p /var/www/$site
 a2ensite $site
-cp /home/stuart/default /etc/apache2/sites-available/default
+https://github.com/strtwtsn/LampServer/blob/master/files/default /etc/apache2/sites-available/default
 a2enmod rewrite
 /etc/init.d/apache2 restart
 read -p "Enter new mysql root password:" password
